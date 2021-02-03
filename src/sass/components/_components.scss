@@ -1,0 +1,159 @@
+.icon {
+  filter: $filter-icon;
+  width: 20px;
+  height: 20px;
+}
+
+.main__wrapper {
+  background: $color-light;
+  box-shadow: 1px 1px 5px 0px $color-paragraph;
+  border-radius: 2px;
+  max-width: 1200px;
+  margin: auto;
+  margin-bottom: 15px;
+  text-align: center;
+  padding-bottom: 30px;
+
+  &-title{
+    text-align: left;
+    margin: 0;
+    padding: 20px;
+    font-size: 20px;
+  }
+}
+
+.separate-line-horizontal {
+  height: 0.5px;
+  width: 100%;
+  background: $color-paragraph;
+  display: block;
+}
+
+.separate-line-vertical {
+  width: 1px;
+  height: 100%;
+  background: $color-paragraph;
+  display: inline-block;
+}
+
+.button {
+  align-items: center;
+  display: flex;
+  position: relative;
+  font-family: $paragraph-font;
+  font-weight: 200;
+  color: $color-paragraph;
+  font-size: 20px;
+
+  &:hover {
+    background: $color-sidebar-hover;
+    color: $color-light;
+
+    .icon {
+      filter: $filter-icon-light;
+    }
+
+    &:before {
+      content: " ";
+      background: $main-color;
+      width: 4px;
+      height: 100%;
+      left: 0;
+      position: absolute;
+    }
+  }
+}
+
+.button__main{
+  background: $main-color;
+  color: $color-light;
+  padding: 10px;
+  border-radius: 5px;
+
+  img{
+    filter: $filter-icon-light;
+  }
+}
+
+%h2,
+%h3,
+%h4,
+%h5,
+h2,
+h3,
+h4,
+h5 {
+  color: $color-paragraph;
+  font-family: $paragraph-font;
+}
+
+.table__cell{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.main__content{
+  margin: 50px 150px;
+}
+
+.table__links {
+  width: 100%;
+  padding: 50px 0;
+
+  tr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 0.5px $color-paragraph;
+    padding: 0 10px;
+
+    &:hover {
+      background: $color-light-grey;
+    }
+
+    &:hover .icon {
+      visibility: visible;
+    }
+
+    .icon {
+      visibility: hidden;
+    }
+
+    td:nth-of-type(3) {
+      a:first-of-type {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  tr:first-of-type {
+    border-top: solid 0.5px $color-paragraph;
+  }
+}
+
+.form{
+  @extend %col-md-8;
+  margin: auto;
+
+  &__cell{
+    @extend %h4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0;
+    align-items: center;
+
+    h4{
+      margin: 7px 0;
+    }
+
+    input{
+      border-radius: 5px;
+      border: 1px solid $color-paragraph;
+      padding: 5px 20px;
+    }
+  }
+}

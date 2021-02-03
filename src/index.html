@@ -1,13 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="vendor/bootstrap-grid.css">
+  <script src="https://kit.fontawesome.com/17bc2c29d8.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Pacifico&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <title>Document</title>
 </head>
-<body>
 
+<body>
+  <article class="row">
+    <section class="sidebar">
+      <div class="sidebar__top">
+        <h1 class="sidebar__top-name">Just do it</h1>
+        <a href="#hamburger"><i class="sidebar__top-icon fas fa-bars"></i></a>
+      </div>
+      <div class="sidebar__middle">
+        <ul class="sidebar__middle-list">
+          <li>
+            <a href="#general" class="button"><img class="icon icon-sidebar" src="icons/general.svg" alt="">General</a>
+          </li>
+          <li>
+            <a href="#details" class="button"><img class="icon icon-sidebar" src="icons/details.svg" alt="">Details</a>
+          </li>
+          <li>
+            <a href="#links" class="button"><img class="icon icon-sidebar" src="icons/links.svg" alt="">Links</a>
+          </li>
+          <li>
+            <a href="#banners" class="button"><img class="icon icon-sidebar" src="icons/banners.svg" alt="">Banners</a>
+          </li>
+          <li>
+            <a href="#personaldata" class="button"><img class="icon icon-sidebar" src="icons/personaldata.svg"
+                alt="">Personal
+              data</a>
+          </li>
+          <li>
+            <a href="#payout" class="button"><img class="icon icon-sidebar" src="icons/payout.svg" alt="">Payout</a>
+          </li>
+          <li>
+            <a href="#postback" class="button"><img class="icon icon-sidebar" src="icons/postback.svg"
+                alt="">Postback</a>
+          </li>
+        </ul>
+        <span class="separate-line-horizontal"></span>
+      </div>
+      <div class="sidebar__bottom">
+        <h4>YOUR MANAGER</h4>
+        <a href="#manager">
+          <div class="manager__wrapper">
+            <img class="manager__wrapper-photo" src="images/manager.jpeg" alt="">
+            <span class="manager__wrapper-dot"></span>
+          </div>
+          Katarina K.
+        </a>
+      </div>
+    </section>
+    <section class="topbar">
+      <span class="separate-line-vertical"></span>
+      <a href="#money-balance" class="button topbar__button">
+        <img class="icon icon-topbar icon-message" src="icons/wallet.svg" alt="">
+        <h4>$1,500.00</h4>
+        <img class="icon icon-topbar" src="icons/arrow-down-small.svg" alt="">
+      </a>
+      <span class="separate-line-vertical"></span>
+      <a href="#notification" class="button topbar__button">
+        <img class="icon icon-topbar" src="icons/notification.svg" alt="">
+      </a>
+      <span class="separate-line-vertical"></span>
+      <a href="#account" class="button topbar__button">
+        <img class="icon icon-topbar" src="icons/profile.svg" alt="">
+        <p>Leonardo Dicaprio</p>
+      </a>
+      <span class="separate-line-vertical"></span>
+      <a href="#quit" class="button topbar__button">
+        <img class="icon icon-topbar" src="icons/quit.svg" alt="">
+      </a>
+    </section>
+    <section class="main">
+      <div class="general">
+        <div class="main__wrapper">
+          <h4 class="main__wrapper-title">GENERAL STATISTIC</h4>
+          <span class="separate-line-horizontal"></span>
+          <form class="date-picker">
+            <input type="date" value="2021-02-22">
+            <input type="date" value="2021-02-22">
+            <a href="#submit" class="button__main"><img class="icon" src="icons/refresh.svg" alt=""></a>
+          </form>
+          <span class="separate-line-horizontal"></span>
+          <div class="main__content">
+            <div class="table__wrapper">
+              <div class="table__wrapper-col">
+                <div class="table__cell">
+                  <h4 class="table__cell-title">Visit Signups</h4>
+                  <p class="table__cell-value">124</p>
+                  <span class="separate-line-horizontal"></span>
+                </div>
+                <div class="table__cell">
+                  <h4 class="table__cell-title">FTD</h4>
+                  <p class="table__cell-value">445</p>
+                  <span class="separate-line-horizontal"></span>
+                </div>
+              </div>
+              <div class="table__wrapper-col">
+                <div class="table__cell">
+                  <h4 class="table__cell-title">Not deposit</h4>
+                  <p class="table__cell-value">564</p>
+                  <span class="separate-line-horizontal"></span>
+                </div>
+                <div class="table__cell">
+                  <h4 class="table__cell-title">Turn over</h4>
+                  <p class="table__cell-value">432</p>
+                  <span class="separate-line-horizontal"></span>
+                </div>
+              </div>
+            </div>
+            <div class="chart__wrapper">
+              <h4 class="chart__title">Earning charts</h4>
+              <a class="button__chart" href="#signups"><span class="dot dot__signup"></span>Signups</a>
+              <a class="button__chart" href="#ftd"><span class="dot dot__ftd"></span>FTD</a>
+              <a class="button__chart" href="#earned"><span class="dot dot__earned"></span>Earned</a>
+              <canvas id="myChart" height="150"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="main__wrapper" id="links">
+          <h4 class="main__wrapper-title">LINKS</h4>
+          <span class="separate-line-horizontal"></span>
+          <div class="main__content">
+            <a href="#add-new" class="button__main">+ add new</a>
+            <table class="table__links">
+              <tr>
+                <td>
+                  <h4>Home page</h4>
+                </td>
+                <td><a href="#">http://www.homepage.com</a></td>
+                <td><a href="#"><img class="icon" src="icons/links.svg" alt=""></a><a href="#"><img class="icon"
+                      src="icons/trash.svg" alt=""></a></td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Currently offer</h4>
+                </td>
+                <td><a href="#">http://www.currently.com</a></td>
+                <td><a href="#"><img class="icon" src="icons/links.svg" alt=""></a><a href="#"><img class="icon"
+                      src="icons/trash.svg" alt=""></a></td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Blurpix</h4>
+                </td>
+                <td><a href="#">http://www.blurpix.com</a></td>
+                <td><a href="#"><img class="icon" src="icons/links.svg" alt=""></a><a href="#"><img class="icon"
+                      src="icons/trash.svg" alt=""></a></td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Your Site</h4>
+                </td>
+                <td><a href="#">http://www.yoursite.com</a></td>
+                <td><a href="#"><img class="icon" src="icons/links.svg" alt=""></a><a href="#"><img class="icon"
+                      src="icons/trash.svg" alt=""></a></td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Google</h4>
+                </td>
+                <td><a href="#">http://www.google.com</a></td>
+                <td><a href="#"><img class="icon" src="icons/links.svg" alt=""></a><a href="#"><img class="icon"
+                      src="icons/trash.svg" alt=""></a></td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Facebook</h4>
+                </td>
+                <td><a href="#">http://www.facebook.com</a></td>
+                <td><a href="#"><img class="icon" src="icons/links.svg" alt=""></a><a href="#"><img class="icon"
+                      src="icons/trash.svg" alt=""></a></td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Dashboard</h4>
+                </td>
+                <td><a href="#">http://www.dashboard.com</a></td>
+                <td><a href="#"><img class="icon" src="icons/links.svg" alt=""></a><a href="#"><img class="icon"
+                      src="icons/trash.svg" alt=""></a></td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Blurax</h4>
+                </td>
+                <td><a href="#">http://www.blurax.com</a></td>
+                <td><a href="#"><img class="icon" src="icons/links.svg" alt=""></a><a href="#"><img class="icon"
+                      src="icons/trash.svg" alt=""></a></td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Piece of Wine</h4>
+                </td>
+                <td><a href="#">http://www.pieceofwine.com</a></td>
+                <td><a href="#"><img class="icon" src="icons/links.svg" alt=""></a><a href="#"><img class="icon"
+                      src="icons/trash.svg" alt=""></a></td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Twitter</h4>
+                </td>
+                <td><a href="#">http://www.twitter.com</a></td>
+                <td><a href="#"><img class="icon" src="icons/links.svg" alt=""></a><a href="#"><img class="icon"
+                      src="icons/trash.svg" alt=""></a></td>
+              </tr>
+            </table>
+            <a href="#add-new" class="button__main">+ add new</a>
+          </div>
+        </div>
+      </div>
+      <div class="banners">
+        <div class="main__wrapper">
+          <h4 class="main__wrapper-title">BANNERS</h4>
+          <span class="separate-line-horizontal"></span>
+          <div class="main__content">
+            <a href="#add-new" class="button__main">+ add new</a>
+            <table class="table__links">
+              <tr>
+                <td>
+                  <h4>Banner main</h4>
+                </td>
+                <td><a href="#">http://www.webiste.com/bannermain.gif</a></td>
+                <td><a href="#"><img class="icon" src="icons/links.svg" alt=""></a><a href="#"><img class="icon"
+                      src="icons/trash.svg" alt=""></a></td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Sign up banner</h4>
+                </td>
+                <td><a href="#">http://www.webiste.com/signup.gif</a></td>
+                <td><a href="#"><img class="icon" src="icons/links.svg" alt=""></a><a href="#"><img class="icon"
+                      src="icons/trash.svg" alt=""></a></td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Banner left side</h4>
+                </td>
+                <td><a href="#">http://www.webiste.com/leftside.gif</a></td>
+                <td><a href="#"><img class="icon" src="icons/links.svg" alt=""></a><a href="#"><img class="icon"
+                      src="icons/trash.svg" alt=""></a></td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Vertical banner</h4>
+                </td>
+                <td><a href="#">http://www.webiste.com/vert.gif</a></td>
+                <td><a href="#"><img class="icon" src="icons/links.svg" alt=""></a><a href="#"><img class="icon"
+                      src="icons/trash.svg" alt=""></a></td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Front banner</h4>
+                </td>
+                <td><a href="#">http://www.webiste.com/front.gif</a></td>
+                <td><a href="#"><img class="icon" src="icons/links.svg" alt=""></a><a href="#"><img class="icon"
+                      src="icons/trash.svg" alt=""></a></td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Horizontal banner</h4>
+                </td>
+                <td><a href="#">http://www.webiste.com/horizontal.gif</a></td>
+                <td><a href="#"><img class="icon" src="icons/links.svg" alt=""></a><a href="#"><img class="icon"
+                      src="icons/trash.svg" alt=""></a></td>
+              </tr>
+            </table>
+            <a href="#add-new" class="button__main">+ add new</a>
+          </div>
+        </div>
+      </div>
+      <div class="personaldata">
+        <div class="main__wrapper">
+          <h4 class="main__wrapper-title">PERSONAL DATA</h4>
+          <span class="separate-line-horizontal"></span>
+          <form>
+            <div class="main__content">
+              <div class="form">
+                <label class="form__cell">Name<input type="text">
+                </label>
+                <label class="form__cell">Surname<input type="text">
+                </label>
+                <label class="form__cell">E-mail<input type="text">
+                </label>
+                <label class="form__cell">Phone number<input type="text">
+                </label>
+              </div>
+            </div>
+            <span class="separate-line-horizontal"></span>
+            <div class="main__content">
+              <div class="form">
+                <label class="form__cell">Skype<input type="text" required>
+                </label>
+                <label class="form__cell">ICQ<input type="text">
+                </label>
+                <label class="form__cell">Msn<input type="text">
+                </label>
+              </div>
+            </div>
+            <span class="separate-line-horizontal"></span>
+            <div class="main__content">
+              <div class="form">
+                <label class="form__cell">Wallet<input type="text">
+                </label>
+              </div>
+            </div>
+            <span class="separate-line-horizontal"></span>
+            <div class="main__content">
+              <div class="form">
+                <label class="form__cell">Password<input type="text">
+                </label>
+                <label class="form__cell">Repeat<input type="text">
+                </label>
+              </div>
+            </div>
+            <span class="separate-line-horizontal"></span>
+            <div class="main__content">
+              <button type="submit" class="button__main button__form">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </article>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <script src="js/script.js" type="module"></script>
 </body>
+
 </html>

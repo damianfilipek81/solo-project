@@ -1,0 +1,18 @@
+@media (max-width: 767px){
+  .sidebar{
+    height: initial;
+    position: relative;
+
+    &__middle, &__bottom{
+      display: none;
+    }
+
+    &__bottom{
+      padding-bottom: 60px;
+    }
+
+    .toggle{
+      display: block;
+    }
+  }
+}

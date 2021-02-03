@@ -1,0 +1,13 @@
+.personaldata{
+  display: none;
+}
+
+.button__form {
+  border: none;
+  padding: 10px 20px !important;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}

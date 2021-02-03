@@ -1,0 +1,18 @@
+.main {
+  @extend %col-12;
+  @extend %col-md-9;
+  @extend %col-lg-10;
+  @extend %container;
+  margin-right: 0;
+  padding: 15px;
+  background: $color-main-bc;
+  height: 100%;
+}
+
+.active{
+  display: block;
+}
+
+.not-active{
+  display: none !important; 
+}

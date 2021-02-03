@@ -4,5 +4,17 @@
 @import "normalize";
 @import "layout";
 
+//pages
+@import "pages/general";
+@import "pages/banners";
+@import "pages/personalData";
+
 //components
-@import "components/_sidebar";
+@import "components/_components";
+
+//sections
+@import "sections/sidebar";
+@import "sections/topbar";
+@import "sections/main";
+@import "media";
+

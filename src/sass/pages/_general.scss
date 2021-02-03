@@ -1,0 +1,59 @@
+.date-picker {
+  margin: 30px 0;
+
+  a {
+    top: 50%;
+  }
+}
+
+.table__wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &-col {
+    @extend %col-lg-5;
+    @extend %col-12;
+    padding: 0;
+  }
+}
+
+.chart__title {
+  text-align: left;
+  margin: 50px 0;
+}
+
+#myChart {
+  margin-top: 50px;
+}
+
+.button__chart {
+  padding: 10px;
+  border-radius: 5px;
+
+  &:hover {
+    background: $color-paragraph;
+  }
+}
+
+.dot {
+  display: inline-block;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  z-index: 20;
+  margin-right: 10px;
+
+  &__signup {
+    background: #8dbec8;
+  }
+
+  &__ftd {
+    background: $main-color;
+  }
+
+  &__earned {
+    background: rgb(12, 192, 12);
+  }
+}
