@@ -36,13 +36,14 @@ links.addEventListener('click', function (event) {
   pageActive(linkHref);
 });
 
+pages[0].classList.add(classNames.active);
+
 const pageActive = (linkHref) => {
   for (let page of pages) {
     if (!page.classList.contains(linkHref)) {
-      page.classList.add(classNames.notActive);
       page.classList.remove(classNames.active);
+
     } else if (page.classList.contains(linkHref)) {
-      page.classList.remove(classNames.notActive);
       page.classList.add(classNames.active);
     }
   }

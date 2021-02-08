@@ -5,14 +5,10 @@
   @extend %container;
   margin-right: 0;
   padding: 15px;
-  background: $color-main-bc;
   height: 100%;
+  margin-top: 55px;
 }
 
 .active{
   display: block;
-}
-
-.not-active{
-  display: none !important; 
 }

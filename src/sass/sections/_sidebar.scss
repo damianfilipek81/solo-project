@@ -65,9 +65,10 @@
       display: flex;
       align-items: center;
       padding-left: 15px;
-      margin-top: 50px;
-      height: 20px;
+      margin-top: 20px;
       color: #0265e6;
+      line-height: 20px;
+      overflow: hidden;
     }
 
     .manager__wrapper {

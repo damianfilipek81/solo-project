@@ -1,0 +1,68 @@
+.payout {
+  display: none;
+}
+
+.table__payout-wrapper {
+  margin: 0 20px;
+  overflow-x: auto;
+}
+
+.table__payout {
+  white-space: nowrap;
+
+  thead tr {
+    border-top: none !important;
+
+    .button__table-navigation {
+      padding: 5px 10px;
+
+      .icon {
+        height: 12px;
+        width: 12px;
+        margin-left: 5px;
+      }
+
+      &:hover {
+        background: $color-light-grey;
+        border-radius: 3px;
+      }
+
+      &:hover .icon {
+        visibility: visible;
+      }
+    }
+
+    th {
+      padding: 13px 0;
+    }
+
+    &:hover {
+      background: none;
+
+      .icon {
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+
+  a {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3px;
+
+    &:hover {
+      background: $color-light-grey;
+      border-radius: 5px;
+    }
+  }
+}

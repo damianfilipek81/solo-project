@@ -4,6 +4,23 @@
   height: 20px;
 }
 
+.date-picker {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    margin: 0 10px;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .main__wrapper {
   background: $color-light;
   box-shadow: 1px 1px 5px 0px $color-paragraph;
@@ -14,7 +31,7 @@
   text-align: center;
   padding-bottom: 30px;
 
-  &-title{
+  &-title {
     text-align: left;
     margin: 0;
     padding: 20px;
@@ -31,7 +48,7 @@
 
 .separate-line-vertical {
   width: 1px;
-  height: 100%;
+  height: auto;
   background: $color-paragraph;
   display: inline-block;
 }
@@ -64,13 +81,13 @@
   }
 }
 
-.button__main{
+.button__main {
   background: $main-color;
   color: $color-light;
   padding: 10px;
   border-radius: 5px;
 
-  img{
+  img {
     filter: $filter-icon-light;
   }
 }
@@ -87,28 +104,30 @@ h5 {
   font-family: $paragraph-font;
 }
 
-.table__cell{
+.table__cell {
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  &-title{
+    margin: 10px 0;
+  }
 }
 
-.main__content{
+.main__content {
   margin: 50px 150px;
 }
 
 .table__links {
   width: 100%;
-  padding: 50px 0;
+  margin: 50px 0;
+  border-collapse: collapse;
 
   tr {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     border-bottom: solid 0.5px $color-paragraph;
-    padding: 0 10px;
+    text-align: left;
 
     &:hover {
       background: $color-light-grey;
@@ -120,6 +139,15 @@ h5 {
 
     .icon {
       visibility: hidden;
+    }
+
+    td {
+      padding: 15px 10px;
+
+      .table__text {
+        color: $color-paragraph;
+        font-size: 20px;
+      }
     }
 
     td:nth-of-type(3) {
@@ -134,11 +162,11 @@ h5 {
   }
 }
 
-.form{
+.form {
   @extend %col-md-8;
   margin: auto;
 
-  &__cell{
+  &__cell {
     @extend %h4;
     display: flex;
     flex-direction: row;
@@ -146,11 +174,11 @@ h5 {
     margin: 10px 0;
     align-items: center;
 
-    h4{
+    h4 {
       margin: 7px 0;
     }
 
-    input{
+    input {
       border-radius: 5px;
       border: 1px solid $color-paragraph;
       padding: 5px 20px;
