@@ -6,6 +6,7 @@ const select = {
     topBar: '[href="#hamburger"]',
     links: '.sidebar__middle-list',
     main: '.main',
+    chat: '[href="#manager"]',
   },
   main: {
     chart: 'myChart',
@@ -14,20 +15,62 @@ const select = {
     formThree: '.form-3',
     formFour: '.form-4',
     formButton: '.button__form',
+  },
+  topbar: {
+    account: '[href="#account"]',
+    quit: '[href="#quit"]',
+  },
+  popups: {
+    login: '.login',
+    quit: '.quit',
+    chat: '.manager__chat',
   }
 };
 const classNames = {
   toggle: 'toggle',
   active: 'active',
-  notActive: 'not-active',
 };
 
 const barButton = document.querySelector(select.sidebar.topBar);
 const sidebarMiddle = document.querySelector(select.sidebar.middle);
 const sidebarBottom = document.querySelector(select.sidebar.bottom);
 
+const loginButton = document.querySelector(select.topbar.account);
+const loginPopup = document.querySelector(select.popups.login);
+
+const quitButton = document.querySelector(select.topbar.quit);
+const quitPopup = document.querySelector(select.popups.quit);
+
+const chatButton = document.querySelector(select.sidebar.chat);
+const chatPopup = document.querySelector(select.popups.chat);
+
 const links = document.querySelector(select.sidebar.links);
 const pages = document.querySelector(select.sidebar.main).children;
+
+loginButton.addEventListener('click', function (event) {
+  event.preventDefault();
+  loginPopup.classList.add(classNames.active);
+});
+
+quitButton.addEventListener('click', function (event) {
+  event.preventDefault();
+  quitPopup.classList.add(classNames.active);
+});
+
+chatButton.addEventListener('click', function (event) {
+  event.preventDefault();
+  chatPopup.classList.add(classNames.active);
+});
+
+window.addEventListener('click', function (event) {
+  if (event.target == loginPopup) {
+    loginPopup.classList.remove(classNames.active);
+  } else if (event.target == quitPopup) {
+    quitPopup.classList.remove(classNames.active);
+  } else if (event.target == chatPopup) {
+    chatPopup.classList.remove(classNames.active);
+  }
+});
 
 links.addEventListener('click', function (event) {
   const clickedElement = event.target;

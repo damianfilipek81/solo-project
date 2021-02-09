@@ -1,6 +1,6 @@
 .sidebar {
-  @extend %col-lg-2; 
-  @extend %col-md-3; 
+  @extend %col-lg-2;
+  @extend %col-md-3;
   @extend %col-12;
   height: 100vh;
   background: $paragraph-color;
@@ -47,7 +47,7 @@
     li a {
       padding: 15px 15px;
       position: relative;
-      
+
       .icon-sidebar {
         margin-right: 20px;
       }
@@ -66,34 +66,38 @@
       align-items: center;
       padding-left: 15px;
       margin-top: 20px;
-      color: #0265e6;
+      color: rgb(101, 131, 233);
       line-height: 20px;
       overflow: hidden;
-    }
 
-    .manager__wrapper {
-      height: 60px;
-      width: 60px;
-      display: inline-block;
-      margin-right: 12px;
-      position: relative;
-
-      &-photo {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 100%;
-      }
-
-      &-dot {
-        height: 15px;
-        width: 15px;
-        border-radius: 100%;
-        background: #35de2c;
-        display: inline-block;
-        position: absolute;
-        right: 5px;
+      &:hover{
+        opacity: 0.8;
       }
     }
+  }
+}
+
+.manager__wrapper {
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+  margin-right: 12px;
+  position: relative;
+
+  &-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+  }
+
+  &-dot {
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    background: #35de2c;
+    display: inline-block;
+    position: absolute;
+    right: 5px;
   }
 }

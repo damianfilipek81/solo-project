@@ -8,13 +8,18 @@
   padding-right: 0;
   z-index: 1;
   position: fixed;
+
+  a:nth-of-type(3){
+    color: rgb(101, 131, 233);
+    font-weight: 400;
+  }
 }
 
 .topbar__button {
   justify-content: center;
   padding: 10px;
-  max-height: 50px;
-  
+  max-height: 40px;
+
   &:hover h4{
     color: $color-light;
   }

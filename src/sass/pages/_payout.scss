@@ -45,24 +45,3 @@
     }
   }
 }
-
-.links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px 0;
-
-  a {
-    height: 30px;
-    width: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 3px;
-
-    &:hover {
-      background: $color-light-grey;
-      border-radius: 5px;
-    }
-  }
-}

@@ -1,7 +1,7 @@
 .icon {
   filter: $filter-icon;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
 .date-picker {
@@ -21,7 +21,7 @@
   }
 }
 
-.main__wrapper {
+.page__wrapper {
   background: $color-light;
   box-shadow: 1px 1px 5px 0px $color-paragraph;
   border-radius: 2px;
@@ -30,13 +30,13 @@
   margin-bottom: 15px;
   text-align: center;
   padding-bottom: 30px;
+}
 
-  &-title {
-    text-align: left;
-    margin: 0;
-    padding: 20px;
-    font-size: 20px;
-  }
+.page-title {
+  text-align: left;
+  margin: 0;
+  padding: 20px;
+  font-size: 20px;
 }
 
 .separate-line-horizontal {
@@ -60,7 +60,7 @@
   font-family: $paragraph-font;
   font-weight: 200;
   color: $color-paragraph;
-  font-size: 20px;
+  font-size: 18px;
 
   &:hover {
     background: $color-sidebar-hover;
@@ -81,7 +81,7 @@
   }
 }
 
-.button__main {
+.button__submit {
   background: $main-color;
   color: $color-light;
   padding: 10px;
@@ -89,6 +89,29 @@
 
   img {
     filter: $filter-icon-light;
+  }
+
+  &:hover {
+    background: rgb(247, 115, 27);
+  }
+
+  &:active {
+    background: rgba(247, 115, 27, 0.8);
+  }
+}
+
+.button__cancel{
+  background: rgba(156, 156, 156, 0.867);
+  color: $color-light;
+  padding: 10px;
+  border-radius: 5px;
+
+  &:hover {
+    background: rgb(129, 129, 129);
+  }
+
+  &:active {
+    background: rgba(156, 156, 156, 0.7);
   }
 }
 
@@ -104,23 +127,38 @@ h5 {
   font-family: $paragraph-font;
 }
 
-.table__cell {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: space-between;
-  flex-wrap: wrap;
+.summary {
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
-  &-title{
-    margin: 10px 0;
+    &-col {
+      @extend %col-lg-5;
+      @extend %col-12;
+      padding: 0;
+    }
+  }
+
+  &__cell {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &-title {
+      margin: 10px 0;
+    }
   }
 }
 
-.main__content {
+.page__content {
   margin: 50px 150px;
 }
 
-.table__links {
+.table__wrapper {
   width: 100%;
   margin: 50px 0;
   border-collapse: collapse;
@@ -150,6 +188,10 @@ h5 {
       }
     }
 
+    td:nth-of-type(2) a {
+      color: rgb(101, 131, 233);
+    }
+
     td:nth-of-type(3) {
       a:first-of-type {
         margin-right: 10px;
@@ -162,9 +204,17 @@ h5 {
   }
 }
 
+.table__links tr {
+  td:nth-of-type(3) {
+    text-align: right;
+  }
+}
+
 .form {
-  @extend %col-md-8;
-  margin: auto;
+  &__wrapper {
+    @extend %col-md-8;
+    margin: auto;
+  }
 
   &__cell {
     @extend %h4;
@@ -182,6 +232,27 @@ h5 {
       border-radius: 5px;
       border: 1px solid $color-paragraph;
       padding: 5px 20px;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+
+  a {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3px;
+
+    &:hover {
+      background: $color-light-grey;
+      border-radius: 5px;
     }
   }
 }
