@@ -158,7 +158,13 @@ h5 {
   margin: 50px 150px;
 }
 
-.table__wrapper {
+.scroll__wrapper {
+  overflow-x: auto;
+  width: 100%;
+  display: block;
+}
+
+.table {
   width: 100%;
   margin: 50px 0;
   border-collapse: collapse;
@@ -184,7 +190,6 @@ h5 {
 
       .table__text {
         color: $color-paragraph;
-        font-size: 20px;
       }
     }
 

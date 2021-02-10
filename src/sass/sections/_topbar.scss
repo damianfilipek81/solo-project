@@ -1,5 +1,9 @@
 .topbar{
   @extend %col-12;
+  @extend %col-md-9;
+  @extend %col-lg-10;
+  top: 0;
+  right: 0;
   width: 100%;
   background: $color-light;
   box-shadow: 0px 1px 5px 0px $color-paragraph;
