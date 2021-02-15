@@ -15,6 +15,9 @@
 .button__chart {
   padding: 10px;
   border-radius: 5px;
+  white-space: pre;
+  margin: 3px 0;
+  display: inline-block;
 
   &:hover {
     background: $color-paragraph;

@@ -1,6 +1,7 @@
 
 const select = {
   sidebar: {
+    sidebar: '.sidebar',
     middle: '.sidebar__middle',
     bottom: '.sidebar__bottom',
     topBar: '[href="#hamburger"]',
@@ -19,21 +20,26 @@ const select = {
   topbar: {
     account: '[href="#account"]',
     quit: '[href="#quit"]',
+    topbar: '.topbar',
   },
   popups: {
     login: '.login',
     quit: '.quit',
     chat: '.manager__chat',
-  }
+  },
 };
 const classNames = {
-  toggle: 'toggle',
+  activeSidebar: 'active-sidebar',
+  activeTopbar: 'active-topbar',
   active: 'active',
+  popupShow: 'popup-show',
 };
 
 const barButton = document.querySelector(select.sidebar.topBar);
 const sidebarMiddle = document.querySelector(select.sidebar.middle);
 const sidebarBottom = document.querySelector(select.sidebar.bottom);
+const sidebar = document.querySelector(select.sidebar.sidebar);
+const topbar = document.querySelector(select.topbar.topbar);
 
 const loginButton = document.querySelector(select.topbar.account);
 const loginPopup = document.querySelector(select.popups.login);
@@ -49,26 +55,26 @@ const pages = document.querySelector(select.sidebar.main).children;
 
 loginButton.addEventListener('click', function (event) {
   event.preventDefault();
-  loginPopup.classList.add(classNames.active);
+  loginPopup.classList.add(classNames.popupShow);
 });
 
 quitButton.addEventListener('click', function (event) {
   event.preventDefault();
-  quitPopup.classList.add(classNames.active);
+  quitPopup.classList.add(classNames.popupShow);
 });
 
 chatButton.addEventListener('click', function (event) {
   event.preventDefault();
-  chatPopup.classList.add(classNames.active);
+  chatPopup.classList.add(classNames.popupShow);
 });
 
 window.addEventListener('click', function (event) {
   if (event.target == loginPopup) {
-    loginPopup.classList.remove(classNames.active);
+    loginPopup.classList.remove(classNames.popupShow);
   } else if (event.target == quitPopup) {
-    quitPopup.classList.remove(classNames.active);
+    quitPopup.classList.remove(classNames.popupShow);
   } else if (event.target == chatPopup) {
-    chatPopup.classList.remove(classNames.active);
+    chatPopup.classList.remove(classNames.popupShow);
   }
 });
 
@@ -85,7 +91,6 @@ const pageActive = (linkHref) => {
   for (let page of pages) {
     if (!page.classList.contains(linkHref)) {
       page.classList.remove(classNames.active);
-
     } else if (page.classList.contains(linkHref)) {
       page.classList.add(classNames.active);
     }
@@ -93,8 +98,10 @@ const pageActive = (linkHref) => {
 };
 
 barButton.addEventListener('click', function () {
-  sidebarMiddle.classList.toggle(classNames.toggle);
-  sidebarBottom.classList.toggle(classNames.toggle);
+  sidebarMiddle.classList.toggle(classNames.activeSidebar);
+  sidebarBottom.classList.toggle(classNames.activeSidebar);
+  topbar.classList.toggle(classNames.activeTopbar);
+  sidebar.insertAdjacentElement('afterend', topbar);
 });
 
 const ctx = document.getElementById(select.main.chart);
