@@ -46,6 +46,29 @@
   display: flex;
 }
 
+.button__close{
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  font-family: $paragraph-font;
+  font-size: 20px;
+  font-weight: 700;
+  color: $color-paragraph;
+  width: 26px;
+  height: 26px;
+  text-align: center;
+  border-radius: 3px;
+
+  &:hover{
+    cursor: pointer;
+    background: $color-light-grey;
+  }
+
+  &:focus{
+    opacity: 0.7;
+  }
+}
+
 .login {
   &__wrapper {
     background: $color-light;

@@ -26,6 +26,7 @@ const select = {
     login: '.login',
     quit: '.quit',
     chat: '.manager__chat',
+    close: '.button__close',
   },
 };
 const classNames = {
@@ -49,6 +50,7 @@ const quitPopup = document.querySelector(select.popups.quit);
 
 const chatButton = document.querySelector(select.sidebar.chat);
 const chatPopup = document.querySelector(select.popups.chat);
+const closeButton = document.querySelector(select.popups.close);
 
 const links = document.querySelector(select.sidebar.links);
 const pages = document.querySelector(select.sidebar.main).children;
@@ -69,11 +71,11 @@ chatButton.addEventListener('click', function (event) {
 });
 
 window.addEventListener('click', function (event) {
-  if (event.target == loginPopup) {
+  if (event.target == loginPopup || event.target == closeButton) {
     loginPopup.classList.remove(classNames.popupShow);
-  } else if (event.target == quitPopup) {
+  } else if (event.target == quitPopup || event.target == closeButton) {
     quitPopup.classList.remove(classNames.popupShow);
-  } else if (event.target == chatPopup) {
+  } else if (event.target == chatPopup || event.target == closeButton) {
     chatPopup.classList.remove(classNames.popupShow);
   }
 });
@@ -91,6 +93,11 @@ const pageActive = (linkHref) => {
   for (let page of pages) {
     if (!page.classList.contains(linkHref)) {
       page.classList.remove(classNames.active);
+      for(let childrenPage of page.children){
+        if(childrenPage.id == linkHref){
+          childrenPage.parentElement.classList.add(classNames.active)
+        }
+      }
     } else if (page.classList.contains(linkHref)) {
       page.classList.add(classNames.active);
     }
