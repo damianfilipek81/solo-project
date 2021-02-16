@@ -19,49 +19,51 @@
         <h1 class="sidebar__top-name">Just do it</h1>
         <a href="#hamburger"><i class="sidebar__top-icon fas fa-bars"></i></a>
       </div>
-      <div class="sidebar__middle">
-        <ul class="sidebar__middle-list">
-          <li>
-            <a href="#general" class="button__sidebar "><img class="icon icon-sidebar" src="icons/general.svg"
-                alt="">General</a>
-          </li>
-          <li>
-            <a href="#details" class="button__sidebar "><img class="icon icon-sidebar" src="icons/details.svg"
-                alt="">Details</a>
-          </li>
-          <li>
-            <a href="#links" class="button__sidebar "><img class="icon icon-sidebar" src="icons/links.svg"
-                alt="">Links</a>
-          </li>
-          <li>
-            <a href="#banners" class="button__sidebar "><img class="icon icon-sidebar" src="icons/banners.svg"
-                alt="">Banners</a>
-          </li>
-          <li>
-            <a href="#personaldata" class="button__sidebar "><img class="icon icon-sidebar" src="icons/personaldata.svg"
-                alt="">Personal
-              data</a>
-          </li>
-          <li>
-            <a href="#payout" class="button__sidebar "><img class="icon icon-sidebar" src="icons/payout.svg"
-                alt="">Payout</a>
-          </li>
-          <li>
-            <a href="#postback" class="button__sidebar "><img class="icon icon-sidebar" src="icons/postback.svg"
-                alt="">Postback</a>
-          </li>
-        </ul>
-        <span class="separate-line-horizontal"></span>
-      </div>
-      <div class="sidebar__bottom">
-        <h4>YOUR MANAGER</h4>
-        <a href="#manager">
-          <div class="manager__wrapper">
-            <img class="manager__wrapper-photo" src="images/manager.jpeg" alt="">
-            <span class="manager__wrapper-dot"></span>
-          </div>
-          Katarina K.
-        </a>
+      <div class="mobile-menu">
+        <div class="sidebar__middle">
+          <ul class="sidebar__middle-list">
+            <li>
+              <a href="#general" class="button__sidebar "><img class="icon icon-sidebar" src="icons/general.svg"
+                  alt="">General</a>
+            </li>
+            <li>
+              <a href="#details" class="button__sidebar "><img class="icon icon-sidebar" src="icons/details.svg"
+                  alt="">Details</a>
+            </li>
+            <li>
+              <a href="#links" class="button__sidebar "><img class="icon icon-sidebar" src="icons/links.svg"
+                  alt="">Links</a>
+            </li>
+            <li>
+              <a href="#banners" class="button__sidebar "><img class="icon icon-sidebar" src="icons/banners.svg"
+                  alt="">Banners</a>
+            </li>
+            <li>
+              <a href="#personaldata" class="button__sidebar "><img class="icon icon-sidebar"
+                  src="icons/personaldata.svg" alt="">Personal
+                data</a>
+            </li>
+            <li>
+              <a href="#payout" class="button__sidebar "><img class="icon icon-sidebar" src="icons/payout.svg"
+                  alt="">Payout</a>
+            </li>
+            <li>
+              <a href="#postback" class="button__sidebar "><img class="icon icon-sidebar" src="icons/postback.svg"
+                  alt="">Postback</a>
+            </li>
+          </ul>
+          <span class="separate-line-horizontal"></span>
+        </div>
+        <div class="sidebar__bottom">
+          <h4>YOUR MANAGER</h4>
+          <a href="#manager">
+            <div class="manager__wrapper">
+              <img class="manager__wrapper-photo" src="images/manager.jpeg" alt="">
+              <span class="manager__wrapper-dot"></span>
+            </div>
+            Katarina K.
+          </a>
+        </div>
       </div>
     </section>
     <section class="topbar">
@@ -571,8 +573,8 @@
       </div>
     </section>
     <section class="popups">
-      <div class="login popup__wrapper">
-        <div class="login__wrapper">
+      <div class="overlay">
+        <div class="login modal">
           <h4 class="popup__title">LOGIN</h4>
           <div class="button__close">X</div>
           <span class="separate-line-horizontal"></span>
@@ -588,9 +590,7 @@
             <button type="submit" class="button ">Enter</button>
           </form>
         </div>
-      </div>
-      <div class="quit popup__wrapper">
-        <div class="quit__wrapper">
+        <div class="quit modal">
           <h4 class="popup__title">Do you realy want to Quit?</h4>
           <div class="button__close">X</div>
           <span class="separate-line-horizontal"></span>
@@ -599,9 +599,7 @@
             <a href="" class="button ">Quit</a>
           </div>
         </div>
-      </div>
-      <div class="manager__chat popup__wrapper">
-        <div class="manager__chat-wrapper">
+        <div class="manager__chat modal">
           <h4 class="popup__title">ONLINE CHAT WITH YOUR PERSONAL MANAGER</h4>
           <div class="button__close">X</div>
           <span class="separate-line-horizontal"></span>

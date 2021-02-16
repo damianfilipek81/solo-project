@@ -2,12 +2,11 @@
 const select = {
   sidebar: {
     sidebar: '.sidebar',
-    middle: '.sidebar__middle',
-    bottom: '.sidebar__bottom',
     topBar: '[href="#hamburger"]',
     links: '.sidebar__middle-list',
     main: '.main',
     chat: '[href="#manager"]',
+    mobileMenu: '.mobile-menu',
   },
   main: {
     chart: 'myChart',
@@ -27,18 +26,19 @@ const select = {
     quit: '.quit',
     chat: '.manager__chat',
     close: '.button__close',
+    overlay: '.overlay',
+    modal: '.modal',
   },
 };
 const classNames = {
   activeSidebar: 'active-sidebar',
   activeTopbar: 'active-topbar',
   active: 'active',
-  popupShow: 'popup-show',
+  popupShow: 'show',
 };
 
 const barButton = document.querySelector(select.sidebar.topBar);
-const sidebarMiddle = document.querySelector(select.sidebar.middle);
-const sidebarBottom = document.querySelector(select.sidebar.bottom);
+const mobileMenu = document.querySelector(select.sidebar.mobileMenu);
 const sidebar = document.querySelector(select.sidebar.sidebar);
 const topbar = document.querySelector(select.topbar.topbar);
 
@@ -50,7 +50,10 @@ const quitPopup = document.querySelector(select.popups.quit);
 
 const chatButton = document.querySelector(select.sidebar.chat);
 const chatPopup = document.querySelector(select.popups.chat);
-const closeButton = document.querySelector(select.popups.close);
+
+const closeButton = document.querySelectorAll(select.popups.close);
+const popupOverlay = document.querySelector(select.popups.overlay);
+const modals = document.querySelectorAll(select.popups.modal);
 
 const links = document.querySelector(select.sidebar.links);
 const pages = document.querySelector(select.sidebar.main).children;
@@ -58,25 +61,44 @@ const pages = document.querySelector(select.sidebar.main).children;
 loginButton.addEventListener('click', function (event) {
   event.preventDefault();
   loginPopup.classList.add(classNames.popupShow);
+  popupOverlay.classList.add(classNames.popupShow);
 });
 
 quitButton.addEventListener('click', function (event) {
   event.preventDefault();
   quitPopup.classList.add(classNames.popupShow);
+  popupOverlay.classList.add(classNames.popupShow);
 });
 
 chatButton.addEventListener('click', function (event) {
   event.preventDefault();
   chatPopup.classList.add(classNames.popupShow);
+  popupOverlay.classList.add(classNames.popupShow);
 });
 
-window.addEventListener('click', function (event) {
-  if (event.target == loginPopup || event.target == closeButton) {
-    loginPopup.classList.remove(classNames.popupShow);
-  } else if (event.target == quitPopup || event.target == closeButton) {
-    quitPopup.classList.remove(classNames.popupShow);
-  } else if (event.target == chatPopup || event.target == closeButton) {
-    chatPopup.classList.remove(classNames.popupShow);
+const closeModal = function () {
+  popupOverlay.classList.remove(classNames.popupShow);
+  modals.forEach(function (modal) {
+    modal.classList.remove(classNames.popupShow);
+  });
+};
+
+closeButton.forEach(function (btn) {
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    closeModal();
+  });
+});
+
+popupOverlay.addEventListener('click', function (e) {
+  if (e.target === this) {
+    closeModal();
+  }
+});
+
+document.addEventListener('keyup', function (e) {
+  if (e.keyCode === 27) {
+    closeModal();
   }
 });
 
@@ -93,9 +115,9 @@ const pageActive = (linkHref) => {
   for (let page of pages) {
     if (!page.classList.contains(linkHref)) {
       page.classList.remove(classNames.active);
-      for(let childrenPage of page.children){
-        if(childrenPage.id == linkHref){
-          childrenPage.parentElement.classList.add(classNames.active)
+      for (let childrenPage of page.children) {
+        if (childrenPage.id == linkHref) {
+          childrenPage.parentElement.classList.add(classNames.active);
         }
       }
     } else if (page.classList.contains(linkHref)) {
@@ -105,10 +127,11 @@ const pageActive = (linkHref) => {
 };
 
 barButton.addEventListener('click', function () {
-  sidebarMiddle.classList.toggle(classNames.activeSidebar);
-  sidebarBottom.classList.toggle(classNames.activeSidebar);
-  topbar.classList.toggle(classNames.activeTopbar);
-  sidebar.insertAdjacentElement('afterend', topbar);
+  mobileMenu.classList.toggle(classNames.activeSidebar);
+  setTimeout(function () {
+    topbar.classList.toggle(classNames.activeTopbar);
+    sidebar.insertAdjacentElement('afterend', topbar);
+  }, 700);
 });
 
 const ctx = document.getElementById(select.main.chart);

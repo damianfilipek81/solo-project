@@ -3,12 +3,12 @@
   @extend %col-md-3;
   @extend %col-12;
   height: 100vh;
-  background: $paragraph-color;
   padding: 0;
   position: fixed;
   display: flex;
   flex-direction: column;
   z-index: 2;
+  background: $paragraph-color;
 
   &__top {
     display: flex;
@@ -52,6 +52,10 @@
         margin-right: 20px;
       }
     }
+  }
+
+  .mobile-menu{
+    background: $paragraph-color;
   }
 
   &__bottom {
